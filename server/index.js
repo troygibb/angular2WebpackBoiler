@@ -9,7 +9,8 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 3000;
 
-app.get('/getHousekeepingData', (req, res) => {
+app.get('/*', (req, res) => {
+	console.log('Getting request...', req.url)
 	fs.readFile(path.join(__dirname, 'findRatesByDate.json'), 'utf8', (err, data) => {
 		if (err) throw err;
 		res.json(JSON.parse(data));
@@ -17,3 +18,5 @@ app.get('/getHousekeepingData', (req, res) => {
 })
 
 app.listen(port, () => console.log(`Listening to port http://localhost:${port}/`));
+
+//getHousekeepingData

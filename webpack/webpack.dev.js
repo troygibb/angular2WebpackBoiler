@@ -11,10 +11,12 @@ module.exports = {
   debug: true,
   devServer: {
     contentBase: path.resolve(rootDir, 'dist'),
-    port: 8000,
+    historyApiFallback: true,
+    inline: true,
+    stats: 'errors-only',
     proxy: {
-      "/api/*": {
-        "target": {
+      '/api/*': {
+        'target': {
           "host": "localhost",
           "protocol": "http:",
           "port": 3000
