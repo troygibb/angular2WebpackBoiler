@@ -1,16 +1,12 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-@Component ({
-	selector: 'test',
-	template: `<h1>Hello you!</h1>`
-})
-class Test {};
+import { HttpModule } from '@angular/http';
+import { App } from './app.component';
 
 @NgModule ({
-	declarations: [ Test ],
+	declarations: [ App ],
 	imports: [ BrowserModule ],
-	bootstrap: [ Test ]
+	bootstrap: [ App ]
 })
 class AppModule {};
 
